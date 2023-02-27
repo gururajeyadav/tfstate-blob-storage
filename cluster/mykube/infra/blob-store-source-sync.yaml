@@ -17,14 +17,14 @@ metadata:
   namespace: flux-system
 spec:
   approvePlan: "auto"
-  backendConfig:
-    customConfiguration: |
-      backend "azurerm" {
-        resource_group_name  = "tfgroup"
-        storage_account_name = "azurepepsicotry"
-        container_name       = "tfstate"
-        key                  = "terraform.tfstate"
-      }
+  #backendConfig:
+   # customConfiguration: |
+    #  backend "azurerm" {
+     #   resource_group_name  = "tfgroup"
+      #  storage_account_name = "azurepepsicotry"
+       # container_name       = "tfstate"
+        #key                  = "terraform.tfstate"
+      #}
   path: ./
   interval: 5m
   sourceRef:
