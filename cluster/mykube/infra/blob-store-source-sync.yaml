@@ -5,7 +5,7 @@ metadata:
   name: blobstore
   namespace: flux-system
 spec:
-  interval: 30s
+  interval: 5m
   url: https://github.com/gururajeyadav/tfstatefile-blob-storage-source
   ref:
     branch: main
@@ -17,8 +17,16 @@ metadata:
   namespace: flux-system
 spec:
   approvePlan: "auto"
+  backendConfig:
+    customConfiguration: |
+      backend "azurerm" {
+        resource_group_name  = "tfgroup"
+        storage_account_name = "azurepepsicotry"
+        container_name       = "tfstate"
+        key                  = "terraform.tfstate"
+      }
   path: ./
-  interval: 1m
+  interval: 5m
   sourceRef:
     kind: GitRepository
     name: blobstore
