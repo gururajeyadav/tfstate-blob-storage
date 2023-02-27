@@ -16,7 +16,7 @@ metadata:
   name: blob-store-tf
   namespace: flux-system
 spec:
-  approvePlan: "plan-main-fa6751f732"
+  approvePlan: ""
   path: ./
   interval: 1m
   sourceRef:
